@@ -5,7 +5,7 @@
         <?php
 		global $wpdb;
                 //$columns = $wpdb->get_results( 'SHOW COLUMNS FROM schools ', OBJECT );
-		$school = $wpdb->get_results( 'SELECT `primary_name`, `alternative_names`, `address`, `contact_numbers`, `email`, `fax_numbers`, `contact_persons`, `title` FROM `1823734_1023`.`schools` WHERE `id`=1', OBJECT);
+		$school = $wpdb->get_results( 'SELECT `primary_name`, `alternative_name`, `address`, `contact_number`, `email`, `fax_number`, `contact_person`, `title` FROM `1823734_1023`.`schools` WHERE `id`=1', OBJECT);
         
 		$school_timeslot = $wpdb->get_results( 'SELECT `date`, `start_time`, `end_time` FROM `1823734_1023`.`school_time_slots` WHERE `school_id`=1', OBJECT);
 		
@@ -20,7 +20,7 @@
                         foreach ( $school as $row ) 
                         {
                         
-                                echo "<tr><td>School Name</td><td>".$row->primary_name."</td></tr><tr><td>School Name</td><td>".$row->alternative_names."</td></tr><tr><td>Address</td><td>".$row->address."</td></tr><tr><td>Phone</td><td>".$row->contact_numbers."</td></tr><tr><td>Email</td><td>".$row->email."</td></tr><tr><td>Fax</td><td>".$row->fax_numbers."</td></tr><tr><td>Contact Person</td><td>".$row->contact_persons."</td></tr><tr><td>Title</td><td>".$row->title."</td></tr>";
+                                echo "<tr><td>School Name</td><td>".$row->primary_name."</td></tr><tr><td>School Name</td><td>".$row->alternative_name."</td></tr><tr><td>Address</td><td>".$row->address."</td></tr><tr><td>Phone</td><td>".$row->contact_number."</td></tr><tr><td>Email</td><td>".$row->email."</td></tr><tr><td>Fax</td><td>".$row->fax_number."</td></tr><tr><td>Contact Person</td><td>".$row->contact_person."</td></tr><tr><td>Title</td><td>".$row->title."</td></tr>";
                                 
                         }
 		} else {

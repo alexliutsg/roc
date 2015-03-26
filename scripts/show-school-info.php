@@ -16,7 +16,7 @@
                 
                 if (!empty($school_id)) {
                         //echo "You are school representative of School ID ".$school_id."\n";
-                        $results = $wpdb->get_results( $wpdb->prepare( 'SELECT `id`, `region_id`, `organization_type`, `primary_name`, `alternative_name`, `address`, `contact_numbers`, `email`, `fax_number`, `website`, `contact_persons` FROM `schools` WHERE id=%d', $school_id), OBJECT );
+                        $results = $wpdb->get_results( $wpdb->prepare( 'SELECT `id`, `region_id`, `organization_type`, `primary_name`, `alternative_name`, `address`, `contact_number`, `email`, `fax_number`, `website`, `contact_person` FROM `schools` WHERE id=%d', $school_id), OBJECT );
                         //$rep_results = $wpdb->get_results( $wpdb->prepare( 'SELECT `school_id`, `name`, `title` FROM `school_representatives` WHERE school_id=%d', $school_id), OBJECT );
                         if (count($results) > 0) {
                                 foreach ( $results as $row ) 
@@ -31,7 +31,7 @@
                 }
                 else {
                         //echo "You are admin\n\n";
-                        $names = $wpdb->get_results( 'SELECT `id`, `region_id`, `organization_type`, `primary_name`, `alternative_name`, `address`, `contact_numbers`, `email`, `fax_number`, `website`, `contact_person` FROM `schools`', OBJECT );
+                        $names = $wpdb->get_results( 'SELECT `id`, `region_id`, `organization_type`, `primary_name`, `alternative_name`, `address`, `contact_number`, `email`, `fax_number`, `website`, `contact_person` FROM `schools`', OBJECT );
                         echo "Choose school:"; ?>
                         <form action="" method="POST"><select name="school_id" onchange="this.form.submit();">
                         <?php

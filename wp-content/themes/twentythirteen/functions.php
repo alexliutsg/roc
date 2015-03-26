@@ -556,3 +556,18 @@ function foobar_func( $atts ){
 	return "foo and bar";
 }
 add_shortcode( 'foobar', 'foobar_func' );
+
+
+/**
+*Customizing email
+*
+*
+*add_filter('wp_mail_from','my_mail_from');
+*function my_mail_from($email)
+*{ return "madhumaithri@gmail.com"; }
+*
+*add_filter('wp_mail_from_name','my_mail_from_name');
+*function my_mail_from_name($name)
+*{ return "Madhu"; }
+*
+*/
