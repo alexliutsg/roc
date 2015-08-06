@@ -6,18 +6,23 @@
 		global $wpdb;
 		
                 $names = $wpdb->get_results( 'SELECT courses.id,courses.school_id,courses.course_code,schools.primary_name FROM `courses` join `schools` on courses.school_id=schools.id', OBJECT );
-                ?>
-                <form action="" method="POST"><select name="course_id" onchange="">
-                <?php
-                foreach ( $names as $row ) 
+                
+                for ($x = 1; $x <= 3; $x++)
                 {
-                        echo "<option value=\"".$row->id."\">".$row->primary_name.": ".$row->course_code."</option>\n";
+                        echo "Preference ".(string)$x."<br>";
+                        echo "<select name=\"choice$x\" onchange=\"\">";
+        
+                        foreach ( $names as $row ) 
+                        {
+                                echo "<option value=\"".$row->id."\">".$row->primary_name.": ".$row->course_code."</option>\n";
+                        }
+                        echo "</select><br><br>";
                 }
                 ?>
-                </select>
-                </form>
+                
 
 
 	</table>
 </body>
 </html>
+

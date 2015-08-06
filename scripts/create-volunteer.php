@@ -22,7 +22,7 @@
 		  );
 		
 		$user = new WP_User( $user_id );
-		$user->set_role( 'schoolrep' );
+		$user->set_role( 'volunteer' );
 		wp_mail( $email_address, 'Welcome!', 'Your Password: ' . $password );
 		
 		
@@ -31,26 +31,16 @@
 		$wpdb->query( $wpdb->prepare
 						( 
                         "
-                                INSERT INTO school_rep
-                                ( user_id, username, firstname, lastname, id_school )
-                                VALUES ( $user_id, '$_POST[username]', '$_POST[firstname]', '$_POST[lastname]', '$_POST[school_id]' )
+                                INSERT INTO volunteer_user_id_list
+                                ( id_user )
+                                VALUES ( $user_id )
                         "		
                         ) 
 					);
-		 
-		$wpdb->query( $wpdb->prepare
-						( 
-                        "
-                                INSERT INTO user_school
-                                ( user_id, school_id )
-                                VALUES ( $user_id, '$_POST[school_id]' )
-                        "		
-                        ) 
-					);
+		}
+		
 		echo "<h2>Record inserted successfully</h2>";
         
-		
-		}
 		
 		?>
 

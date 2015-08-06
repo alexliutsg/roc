@@ -367,9 +367,9 @@ function populate_options() {
 	$options = array(
 	'siteurl' => $guessurl,
 	'home' => $guessurl,
-	'blogname' => __('My Site'),
+	'blogname' => __('RunOurCity Managing System'),
 	/* translators: blog tagline */
-	'blogdescription' => __('Just another WordPress site'),
+	'blogdescription' => __('Run Our City'),
 	'users_can_register' => 0,
 	'admin_email' => 'you@example.com',
 	/* translators: default start of the week. 0 = Sunday, 1 = Monday */

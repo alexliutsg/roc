@@ -997,8 +997,16 @@ ul.nav-menu .focus > ul,
 .entry-summary,
 .entry-meta {
 	margin: 0 auto;
-	max-width: 604px;
+	max-width: 1024px;
 	width: 100%;
+}
+
+.entry-content > p br {
+	display: none;
+}
+
+.entry-content > p:first-of-type {
+	display: none;
 }
 
 .sidebar .entry-header,
